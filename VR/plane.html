@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>RotateCube</title>
+<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+<script>
+		AFRAME.registerComponent('set-sky',{
+			schema: {default:""},
+			init(){
+				var scene = document.querySelector('a-scene');
+				var cam = document.querySelector('a-camera');
+
+				//var tplane = scene.querySelector('#temp-plane');
+				var p1 = document.querySelector('#first_p');
+				var p2 = document.querySelector('#second_p');
+				var p3 = document.querySelector('#third_p');
+				var p4 = document.querySelector('#fourth_p');
+				this.el.addEventListener('click', () => {
+					console.log(this.el);
+					var zval = this.el.getAttribute("position").z;
+					var temp = "";
+					if(p1.getAttribute('position').z==-9.980)
+						temp = p1;
+					if(p2.getAttribute('position').z==-9.980)
+						temp = p2;
+					if(p3.getAttribute('position').z==-9.980)
+						temp = p3;
+					if(p4.getAttribute('position').z==-9.980)
+						temp = p4;
+
+					if(zval == -15.980)
+						temp.emit('four');
+					else if(zval == -13.980)
+						temp.emit('three');
+					else if(zval == -11.980)
+						temp.emit('two');
+					this.el.emit('one');
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<a-scene antialias="true" color='white'>
+		<!-- Center the camera between rows and at a good distance -->
+		<a-camera position="3.35 .765 13.62">
+			<a-cursor color="#4ff3ff" fuse="true" timeout="2"></a-cursor>
+		</a-camera>
+
+		<a-entity>
+			<a-plane id='first_p' position="-2.229 -0.099 -9.980"
+					 geometry="primitive:plane;height:20;width:40" set-sky=""
+					 material='side:double;  transparent:true;opacity:4'>
+				<a-animation begin='four' attribute='position' begin="2000"
+							 to="-2.229 9.3199 -15.980" dur='1000' />
+				<a-animation begin='three' attribute='position' begin="2000"
+							 to="-2.229 6.299 -13.980" dur='1000' />
+				<a-animation begin='two' attribute='position' begin="2000"
+							 to="-2.229 3.199 -11.980" dur='1000' />
+				<a-animation begin='one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+				<a-animation begin='first-three-one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+				<a-animation begin='first-two-one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+			</a-plane>
+		</a-entity>
+		<!--<a-entity>
+		<a-plane id='second_p' position="-2.229 3.199 -11.980"
+		geometry="primitive:plane;height:20;width:20" set-sky=""
+		material='side:double; color:green; transparent:true;opacity:.8'>
+			<a-animation begin='four' attribute='position' begin="2000"
+			to="-2.229 9.3199 -15.980" dur='1000'/>
+			<a-animation begin='three' attribute='position' begin="2000"
+			to="-2.229 6.299 -13.980" dur='1000'/>
+			<a-animation begin='two' attribute='position' begin="2000"
+			to="-2.229 3.199 -11.980" dur='1000'/>
+			<a-animation begin='one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='second-three-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='second-two-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+		</a-plane>
+	</a-entity>
+
+	<a-entity>
+		<a-plane id='third_p' position="-2.229 6.299 -13.980"
+		geometry="primitive:plane;height:20;width:20" set-sky=""
+		material='side:double; color:blue; transparent:true;opacity:.4'>
+			<a-animation begin='four' attribute='position' begin="2000"
+			to="-2.229 9.3199 -15.980" dur='1000'/>
+			<a-animation begin='three' attribute='position' begin="2000"
+			to="-2.229 6.299 -13.980" dur='1000'/>
+			<a-animation begin='two' attribute='position' begin="2000"
+			to="-2.229 3.199 -11.980" dur='1000'/>
+			<a-animation begin='one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='third-three-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='third-two-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+		</a-plane>
+	</a-entity>
+
+
+	<a-entity>
+		<a-plane id='fourth_p' position="-2.229 9.3199 -15.980"
+		geometry="primitive:plane;height:20;width:20" set-sky=""
+		material='side:double; color:yellow; transparent:true;opacity:1'>
+			<a-animation begin='four' attribute='position' begin="2000"
+			to="-2.229 9.3199 -15.980" dur='1000'/>
+			<a-animation begin='three' attribute='position' begin="2000"
+			to="-2.229 6.299 -13.980" dur='1000'/>
+			<a-animation begin='two' attribute='position' begin="2000"
+			to="-2.229 3.199 -11.980" dur='1000'/>
+			<a-animation begin='one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='fourth-three-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+			<a-animation begin='fourth-two-one' attribute='position' begin="2000"
+			to="-2.229 -0.099 -9.980" dur='1000'/>
+		</a-plane>
+		</a-entity>-->
+
+		<a-sky color='#000' />
+	</a-scene>
+
+</body>
+
+</script>
