@@ -1,0 +1,160 @@
+<html>
+<head>
+	<title>RotateCube</title>
+	<script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+	<script>
+		AFRAME.registerComponent('set-sky', {
+			schema: { default: "" },
+			init() {
+				var scene = document.querySelector('a-scene');
+				var cam = document.querySelector('a-camera');
+
+				//var tplane = scene.querySelector('#temp-plane');
+				this.el.addEventListener('click', () => {
+					console.log(this.el);
+
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<a-scene antialias="true" color='white'>
+		<!-- Center the camera between rows and at a good distance -->
+		<a-camera position="3.35 .765 13.62">
+			<a-cursor color="#4ff3ff" fuse="true" timeout="2"></a-cursor>
+		</a-camera>
+
+
+		<a-entity>
+			<a-plane id='first_p' position="-2.229 -0.099 -9.980"
+					 geometry="primitive:plane;height:32;width:50" set-sky=""
+					 material='side:double;  transparent:true;opacity:4'>
+				<a-animation begin='four' attribute='position' begin="2000"
+							 to="-2.229 9.3199 -15.980" dur='1000' />
+				<a-animation begin='three' attribute='position' begin="2000"
+							 to="-2.229 6.299 -13.980" dur='1000' />
+				<a-animation begin='two' attribute='position' begin="2000"
+							 to="-2.229 3.199 -11.980" dur='1000' />
+				<a-animation begin='one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+				<a-animation begin='first-three-one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+				<a-animation begin='first-two-one' attribute='position' begin="2000"
+							 to="-2.229 -0.099 -9.980" dur='1000' />
+
+			</a-plane>
+
+
+			<a-entity position="1 6.4 3" text="value: TEAM -1; color: #000000; height: 6; transparent: true; width: 15; baseline: top; align: center; color : blue"></a-entity>
+
+			<a-entity rotation="8.443 11.20 80.88" position="-13 4.522 .7" text="value: first-v; color: blue; height: 6; width: 10; baseline: top; align: center"></a-entity>
+			<a-entity position="-8 0 3" text="value: first-h; color: #000000; height: 6; transparent: true; width: 10; baseline: top; align: center; color : blue"></a-entity>
+
+			<a-box height="5" width=".5" position="-23.229 6 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-23.229 2 -10" color="green"></a-box>
+
+			<a-box height="8" width=".5" position="-21.229 7.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-21.229 2 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="-19.229 6.95 -10" color="red"></a-box>
+			<a-box height="4" width=".5" position="-19.229 2.471 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="-17.229 6 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-17.229 2 -10" color="green"></a-box>
+
+			<a-box height="3" width=".5" position="-15.229 3 -10" color="red"></a-box>
+			<a-box height="1" width=".5" position="-15.229 1.039 -10" color="green"></a-box>
+
+			<a-box height="2" width=".5" position="-13.229 4.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-13.229 2 -10" color="green"></a-box>
+
+			<a-entity line="start: -13.229, 0, 0; end: -13.229, 8, 0; color: blue;"
+					  line__2="start: -13.229, 0, 0; end: -2.229, 0, 0; color: blue"></a-entity>
+
+
+			<!-- 2nd graph-->
+			<a-box height="5" width=".5" position="1.229 6 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="1.229 2 -10" color="green"></a-box>
+
+			<a-box height="8" width=".5" position="3.229 7.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="3.229 2 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="5.229 6.671 -10" color="red"></a-box>
+			<a-box height="4" width=".5" position="5.229 2.471 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="7.229 6 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="7.229 2 -10" color="green"></a-box>
+
+			<a-box height="3" width=".5" position="9.229 3 -10" color="red"></a-box>
+			<a-box height="1" width=".5" position="9.229 1.039 -10" color="green"></a-box>
+
+			<a-box height="2" width=".5" position="11.229 4.5 -10" color="red"><a-text value="hello"></a-text></a-box>
+			<a-box height="3" width=".5" position="11.229 2 -10" color="green"></a-box>
+
+
+			<a-entity line__3="start: 1, 0, 0; end:1, 8,0; color: blue;"
+					  line__4="start: 1, 0, 0; end: 13.229, 0, 0; color: blue"></a-entity>
+			<a-entity rotation="4.272 10.93 84.26" position="-13 -4.522 .7" text="value: second-v; color: blue; height: 6; width: 10; baseline: top; align: center"></a-entity>
+			<a-entity position="-8 -6.3 3" text="value: second-h; color: #000000; height: 6; transparent: true; width: 10; baseline: top; align: center; color : blue"></a-entity>
+			<!-- 3rd graph-->
+
+			<a-box height="5" width=".5" position="-23.229 -8 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-23.229 -12 -10" color="green"></a-box>
+
+			<a-box height="8" width=".5" position="-21.229 -6.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-21.229 -12 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="-19.229 -7 -10" color="red"></a-box>
+			<a-box height="4" width=".5" position="-19.229 -11.5 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="-17.229 -8 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-17.229 -12 -10" color="green"></a-box>
+
+			<a-box height="3" width=".5" position="-15.229 -11 -10" color="red"></a-box>
+			<a-box height="1" width=".5" position="-15.229 -13 -10" color="green"></a-box>
+
+			<a-box height="2" width=".5" position="-13.229 -9.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="-13.229 -12 -10" color="green"></a-box>
+
+
+			<a-entity line__5="start: -13.229, -8, 0; end: -13.229, -1, 0; color: blue;"
+					  line__6="start: -13.229, -8, 0; end: -1.229, -8, 0; color: blue"></a-entity>
+			<a-entity rotation="6.592 12.37 89.81" position="0.6 4.522 .7" text="value: third-v; color: blue; height: 6; width: 10; baseline: top; align: center"></a-entity>
+			<a-entity position="6 0 3" text="value: third-h; color: #000000; height: 6; transparent: true; width: 10; baseline: top; align: center; color : blue"></a-entity>
+
+			<!-- 4th graph-->
+
+			<a-box height="5" width=".5" position="1.229 -8 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="1.229 -12 -10" color="green"></a-box>
+
+			<a-box height="8" width=".5" position="3.229 -6.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="3.229 -12 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="5.229 -7 -10" color="red"></a-box>
+			<a-box height="4" width=".5" position="5.229 -11.5 -10" color="green"></a-box>
+
+			<a-box height="5" width=".5" position="7.229 -8 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="7.229 -12 -10" color="green"></a-box>
+
+			<a-box height="3" width=".5" position="9.229 -11 -10" color="red"></a-box>
+			<a-box height="1" width=".5" position="9.229 -13 -10" color="green"></a-box>
+
+			<a-box height="2" width=".5" position="11.229 -9.5 -10" color="red"></a-box>
+			<a-box height="3" width=".5" position="11.229 -12 -10" color="green"></a-box>
+
+
+
+			<a-entity line__7="start: 1, -8, 0; end: 1, -1, 0; color: blue;"
+					  line__8="start: 1, -8, 0; end: 14, -8, 0; color: blue"></a-entity>
+			<a-entity rotation="6.548 12.02 88.54" position="0.6 -4.522 .7" text="value: fourth-v; color: blue; height: 6; width: 10; baseline: top; align: center"></a-entity>
+			<a-entity position="6 -6.3 3" text="value: fourth-h; color: #000000; height: 4; transparent: true; width: 10; baseline: top; align: center; color : blue"></a-entity>
+
+
+		</a-entity>
+
+		<a-sky color='#000' />
+	</a-scene>
+
+</body>
+</html>
